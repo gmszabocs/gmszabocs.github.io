@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLUMBÁN Szabolcs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- New Stardos Stencil Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Setting new font */
+            font-family: 'Stardos Stencil', serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        .portfolio-card {
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+            group: hover;
+        }
+        .portfolio-card img {
+            transition: transform 0.5s ease;
+        }
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+        .portfolio-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+<header class="fixed w-full top-0 bg-[#121212]/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo / Name -->
+        <a href="index.html" class="text-xl font-bold tracking-tight">KOLUMBÁN Szabolcs</a>
+        
+        <!-- Menu and Language Selector Container -->
+        <div class="hidden md:flex items-center">
+            
+            <!-- Main Navigation -->
+            <nav class="flex space-x-8 text-sm font-medium items-center mr-8">
+                <!-- Highlighted Active Tab -->
+                <a href="festmenyek_eng.html" class="text-[#FF5722] transition-colors text-gray-300">Artworks</a>
+                <a href="fotok_eng.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Photography</a>
+                <a href="blog_eng.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Blog</a>
+                <a href="contact_eng.html" class="hover:text-[#FF5722] font-bold border-b-2 border-[#FF5722] pb-1">About & Contact</a>
+            </nav>
+            
+            <!-- Language Selector -->
+            <div class="flex items-center space-x-3 text-sm font-semibold border-l border-gray-700 pl-8">
+                <!-- Inactive Language (HU) -->
+                <a href="contact.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">HU</a>
+                
+                <span class="text-gray-700 text-xs">|</span>
+                
+                <!-- Active Language (EN) -->
+                <a href="#" class="text-white cursor-default">EN</a>
+                
+                <span class="text-gray-700 text-xs">|</span>
+                
+                <!-- Inactive Language (IT) -->
+                <a href="contact_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">IT</a>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow pt-32 pb-24 md:pt-48">
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Main Title -->
+        <h1 class="text-4xl md:text-5xl font-semibold mb-16 text-center">About Me - KOLUMBÁN Szabolcs</h1>
+        
+        <!-- Clean Layout: Image on left, Text on right -->
+        <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+            
+            <!-- Left Side: Image -->
+            <div class="w-full md:w-1/2 shrink-0">
+                <img src="rolam_image.jpg" alt="Kolumbán Szabolcs - About Me" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            
+            <!-- Right Side: Body Text -->
+            <div class="w-full md:w-1/2 text-white font-normal leading-relaxed text-lg space-y-6">
+                <p>
+                    Kolumbán Szabolcs, visual artist. I was born in 1998 in Miskolc, and even as a child, I gravitated towards art, taking my first steps in this direction early on.
+                </p>
+<br>
+                <p>
+                    My 2025 exhibition was the culmination of years of work, bringing together the most exciting themes of money, food, and environmental protection. From these three themes, 23 paintings were exhibited in Felsőzsolca. Later in July, I brought the exhibition to Emőd under the title 'Parasztvakítás' (Smoke and Mirrors), further exploring what new installations could be created. I incorporated a wooden trough, a copper crop sprayer, and buckets. There is no deception or beating around the bush regarding the message of the artworks.
+                </p>
+<br>
+                 <p>
+                    Brands, logos, and ordinary everyday items that we use daily without paying attention to them — for me, this is pop art: popular, pop-culture art. A crushed beer can, a banana taped to a wall, or a white urinal can all be tools for conveying a message if we think deeply about it. Its goal is to break down or diminish the boundaries between the elite class and everyday workers. 
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+<section id="kapcsolat" class="py-24 bg-[#121212] border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-[#1A1A1A] rounded-3xl p-10 md:p-20 border border-gray-800 flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="underline-playful">Ask me anything!</span>
+                </h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    For commissions or inquiries, feel free to reach out to me via phone or email. :) 
+                </p>
+                <br> </br>
+                <div class="space-y-6">
+                    <a href="tel:+36205771308" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-[#2A2A2A] text-white rounded-full flex items-center justify-center group-hover:bg-[#FF5722] transition-colors border border-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider">Phone</p>
+                            <p class="text-2xl font-bold text-white group-hover:text-[#FF5722] transition-colors">+36 20 577 1308</p>
+                        </div>
+                    </a>
+                    <a href="mailto:kolumban@szabox.hu" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-[#2A2A2A] text-white rounded-full flex items-center justify-center group-hover:bg-[#FF5722] transition-colors border border-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider">Email</p>
+                            <p class="text-2xl font-bold text-white group-hover:text-[#FF5722] transition-colors">kolumban@szabox.hu</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#121212] border-t border-gray-800 py-10 text-center text-sm text-gray-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Kolumbán Szabolcs - szabox.hu</p>
+        <a href="https://gmszabocs.github.io/" class="hover:text-[#FF5722] transition-colors">gmszabocs.github.io/</a>
+        <div class="flex space-x-6">
+            <a href="https://www.instagram.com/gm_szabocs/" class="hover:text-white transition-colors">Instagram</a>
+            <a href="https://www.behance.net/szabolcskolumban" class="hover:text-white transition-colors">Behance</a>
+            <a href="https://www.linkedin.com/in/szabolcskolumban/" class="hover:text-black transition-colors">LinkedIn</a>
+            <a href="https://www.facebook.com/szabolcs.kolumban" class="hover:text-white transition-colors">Facebook</a>
+        </div>
+    </div>
+</footer>
+
+<div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <button onclick="prevImage(event)" class="absolute left-4 md:left-10 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Enlarged image" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+    <button onclick="nextImage(event)" class="absolute right-4 md:right-10 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+</div>
+
+
+<script>
+    let portfolioCards = document.querySelectorAll('.portfolio-card');
+    let images = [];
+    let currentIndex = 0;
+    
+    // Default number of visible images
+    let currentVisible = 12; 
+    
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const photoGrid = document.getElementById('photo-grid');
+    const loadMoreContainer = document.getElementById('load-more-container');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.remove('hidden');
+        setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.add('opacity-0');
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    function nextImage(e) {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex];
+    }
+
+    function prevImage(e) {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex];
+    }
+
+    // Dynamic event listeners for image clicks
+    function initCardListeners() {
+        portfolioCards = document.querySelectorAll('.portfolio-card');
+        images = Array.from(portfolioCards).map(card => card.querySelector('img').src);
+        
+        portfolioCards.forEach((card, index) => {
+            let newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            newCard.addEventListener('click', () => openLightbox(index));
+        });
+    }
+
+    // NEW: Managing image visibility
+    function updateVisibility() {
+        let cards = Array.from(photoGrid.children);
+        cards.forEach((card, index) => {
+            if (index < currentVisible) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Hide or show button based on remaining images
+        if (loadMoreContainer) {
+            if (currentVisible >= cards.length) {
+                loadMoreContainer.style.display = 'none';
+            } else {
+                loadMoreContainer.style.display = 'flex';
+                loadMoreContainer.classList.remove('hidden');
+            }
+        }
+    }
+
+    // NEW: Button click event (show 12 more images)
+    function loadMore() {
+        currentVisible += 12;
+        updateVisibility();
+    }
+
+    // Shuffle button function (extended with visibility)
+    function shuffleImages() {
+        let cards = Array.from(photoGrid.children);
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        
+        // Re-append them to the DOM in the new order
+        cards.forEach(card => photoGrid.appendChild(card));
+        
+        // Update the view so only 12 of the shuffled images are visible
+        updateVisibility();
+        initCardListeners();
+    }
+
+    // Initial settings on page load
+    updateVisibility();
+    initCardListeners();
+
+    // Close lightbox when clicking on background
+    lightbox.addEventListener('click', (e) => {
+        if(e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    });
+</script>
+
+
+</body>
+</html>

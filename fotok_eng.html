@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLUMBÁN Szabolcs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Új Stardos Stencil Google Fonts linkek -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Új betűtípus beállítása */
+            font-family: 'Stardos Stencil', serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        .portfolio-card {
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+            group: hover;
+        }
+        .portfolio-card img {
+            transition: transform 0.5s ease;
+        }
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+        .portfolio-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+<header class="fixed w-full top-0 bg-[#121212]/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logó / Név -->
+        <a href="festmenyek_eng.html" class="text-xl font-bold tracking-tight">KOLUMBÁN Szabolcs</a>
+        
+        <!-- Menü és Nyelvválasztó konténer -->
+        <div class="hidden md:flex items-center">
+            
+            <!-- Fő navigáció -->
+            <nav class="flex space-x-8 text-sm font-medium items-center mr-8">
+                <!-- Az aktív fül hangsúlyos jelölése -->
+                <a href="festmenyek_eng.html" class="text-[#FF5722] transition-colors text-gray-300">Artworks</a>
+                <a href="fotok_eng.html" class="hover:text-[#FF5722] font-bold border-b-2 border-[#FF5722] pb-1">Photography</a>
+                <a href="blog_eng.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Blog</a>
+                <a href="contact_eng.html" class="hover:text-[#FF5722] transition-colors text-gray-300">About & Contact</a>
+            </nav>
+            
+            <!-- Nyelvválasztó (Elválasztó vonallal a menütől) -->
+            <div class="flex items-center space-x-3 text-sm font-semibold border-l border-gray-700 pl-8">
+                <!-- Aktív nyelv (HU) -->
+                <a href="fotok.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">HU</a>
+                
+                <span class="text-gray-700 text-xs">|</span>
+                
+                <!-- Inaktív nyelvek (EN, IT) -->
+                <a href="fotok_eng.html" class="text-white cursor-default">EN</a>
+                
+                <span class="text-gray-700 text-xs">|</span>
+                
+                <a href="fotok_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors" >IT</a>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow pt-32 pb-24 md:pt-48">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Aláhúzás eltávolítva -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+          Street photography
+        </h1>
+
+        <!-- Új Keverés gomb -->
+        <div class="flex justify-center mb-10">
+            <button onclick="shuffleImages()" class="flex items-center gap-2 bg-[#1A1A1A] border border-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-[#FF5722] transition-colors text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Shuffle images
+            </button>
+        </div>
+        
+    <div id="photo-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+    
+
+<!-- 1. 1_IMG_7330.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/1_IMG_7330.jpg" alt="1_IMG_7330" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_01</h3>
+    </div>
+</div>
+
+<!-- 2. 2_IMG_6514.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/2_IMG_6514.jpg" alt="2_IMG_6514" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_02</h3>
+    </div>
+</div>
+
+<!-- 3. 3_IMG_7385.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/3_IMG_7385.jpg" alt="3_IMG_7385" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_03</h3>
+    </div>
+</div>
+
+<!-- 4. 4_IMG_7028.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/4_IMG_7028.jpg" alt="4_IMG_7028" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_04</h3>
+    </div>
+</div>
+
+<!-- 5. 5_IMG_7350.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/5_IMG_7350.jpg" alt="5_IMG_7350" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_05</h3>
+    </div>
+</div>
+
+<!-- 6. 6_IMG_5759.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/6_IMG_5759.jpg" alt="6_IMG_5759" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_06</h3>
+    </div>
+</div>
+
+<!-- 7. 7_IMG_6458.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/7_IMG_6458.jpg" alt="7_IMG_6458" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_07</h3>
+    </div>
+</div>
+
+<!-- 8. 8_IMG_6351.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/8_IMG_6351.jpg" alt="8_IMG_6351" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_08</h3>
+    </div>
+</div>
+
+<!-- 9. 9_IMG_6481.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/9_IMG_6481.jpg" alt="9_IMG_6481" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_09</h3>
+    </div>
+</div>
+
+<!-- 10. 10_IMG_6587.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/10_IMG_6587.jpg" alt="10_IMG_6587" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_10</h3>
+    </div>
+</div>
+
+<!-- 11. 11_IMG_1793.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/11_IMG_1793.jpg" alt="11_IMG_1793" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_11</h3>
+    </div>
+</div>
+
+<!-- (A többi kép véletlenszerű "Street photo_XX" sorszámmal, 12-től 55-ig) -->
+
+<!-- 12. absractteto.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/absractteto.jpg" alt="absractteto" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_42</h3>
+    </div>
+</div>
+
+<!-- 13. IMG_1832.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_1832.jpg" alt="IMG_1832" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_27</h3>
+    </div>
+</div>
+
+<!-- 14. IMG_1964.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_1964.jpg" alt="IMG_1964" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_15</h3>
+    </div>
+</div>
+
+<!-- 15. IMG_4764.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_4764.jpg" alt="IMG_4764" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_51</h3>
+    </div>
+</div>
+
+<!-- 16. IMG_5016.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_5016.jpg" alt="IMG_5016" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_33</h3>
+    </div>
+</div>
+
+<!-- 17. IMG_5767.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_5767.jpg" alt="IMG_5767" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_19</h3>
+    </div>
+</div>
+
+<!-- 18. IMG_5899.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_5899.jpg" alt="IMG_5899" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_48</h3>
+    </div>
+</div>
+
+<!-- 19. IMG_6052.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6052.jpg" alt="IMG_6052" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_22</h3>
+    </div>
+</div>
+
+<!-- 20. IMG_6060.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6060.jpg" alt="IMG_6060" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_38</h3>
+    </div>
+</div>
+
+<!-- 21. IMG_6067.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6067.jpg" alt="IMG_6067" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_55</h3>
+    </div>
+</div>
+
+<!-- 22. IMG_6290_b.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6290_b.jpg" alt="IMG_6290_b" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_12</h3>
+    </div>
+</div>
+
+<!-- 23. IMG_6338.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6338.jpg" alt="IMG_6338" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_29</h3>
+    </div>
+</div>
+
+<!-- 24. IMG_6420.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6420.jpg" alt="IMG_6420" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_45</h3>
+    </div>
+</div>
+
+<!-- 25. IMG_6496.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6496.jpg" alt="IMG_6496" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_17</h3>
+    </div>
+</div>
+
+<!-- 26. IMG_6514_b.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6514_b.jpg" alt="IMG_6514_b" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_31</h3>
+    </div>
+</div>
+
+<!-- 27. IMG_6652.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6652.jpg" alt="IMG_6652" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_50</h3>
+    </div>
+</div>
+
+<!-- 28. IMG_6731.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6731.jpg" alt="IMG_6731" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_24</h3>
+    </div>
+</div>
+
+<!-- 29. IMG_6859-2.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6859-2.jpg" alt="IMG_6859-2" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_40</h3>
+    </div>
+</div>
+
+<!-- 30. IMG_6879-2.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6879-2.jpg" alt="IMG_6879-2" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_14</h3>
+    </div>
+</div>
+
+<!-- 31. IMG_6909-2.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6909-2.jpg" alt="IMG_6909-2" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_35</h3>
+    </div>
+</div>
+
+<!-- 32. IMG_6965.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6965.jpg" alt="IMG_6965" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_53</h3>
+    </div>
+</div>
+
+<!-- 33. IMG_6989-2.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_6989-2.jpg" alt="IMG_6989-2" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_21</h3>
+    </div>
+</div>
+
+<!-- 34. IMG_7021.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7021.jpg" alt="IMG_7021" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_47</h3>
+    </div>
+</div>
+
+<!-- 35. IMG_7071.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7071.jpg" alt="IMG_7071" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_16</h3>
+    </div>
+</div>
+
+<!-- 36. IMG_7087.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7087.jpg" alt="IMG_7087" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_36</h3>
+    </div>
+</div>
+
+<!-- 37. IMG_7207.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7207.jpg" alt="IMG_7207" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_52</h3>
+    </div>
+</div>
+
+<!-- 38. IMG_7218.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7218.jpg" alt="IMG_7218" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_26</h3>
+    </div>
+</div>
+
+<!-- 39. IMG_7243.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7243.jpg" alt="IMG_7243" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_41</h3>
+    </div>
+</div>
+
+<!-- 40. IMG_7252.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7252.jpg" alt="IMG_7252" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_13</h3>
+    </div>
+</div>
+
+<!-- 41. IMG_7323.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7323.jpg" alt="IMG_7323" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_34</h3>
+    </div>
+</div>
+
+<!-- 42. IMG_7344.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7344.jpg" alt="IMG_7344" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_49</h3>
+    </div>
+</div>
+
+<!-- 43. IMG_7345.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7345.jpg" alt="IMG_7345" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_20</h3>
+    </div>
+</div>
+
+<!-- 44. IMG_7349.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7349.jpg" alt="IMG_7349" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_39</h3>
+    </div>
+</div>
+
+<!-- 45. IMG_7384.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7384.jpg" alt="IMG_7384" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_54</h3>
+    </div>
+</div>
+
+<!-- 46. IMG_7393.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7393.jpg" alt="IMG_7393" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_25</h3>
+    </div>
+</div>
+
+<!-- 47. IMG_7456.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7456.jpg" alt="IMG_7456" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_44</h3>
+    </div>
+</div>
+
+<!-- 48. IMG_7469.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7469.jpg" alt="IMG_7469" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_18</h3>
+    </div>
+</div>
+
+<!-- 49. IMG_7519.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7519.jpg" alt="IMG_7519" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_32</h3>
+    </div>
+</div>
+
+<!-- 50. IMG_7542.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7542.jpg" alt="IMG_7542" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_46</h3>
+    </div>
+</div>
+
+<!-- 51. IMG_7548.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/IMG_7548.jpg" alt="IMG_7548" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_23</h3>
+    </div>
+</div>
+
+<!-- 52. kavezo az egben.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/kavezo az egben.jpg" alt="kavezo az egben" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_37</h3>
+    </div>
+</div>
+
+<!-- 53. motoros.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/motoros.jpg" alt="motoros" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_28</h3>
+    </div>
+</div>
+
+<!-- 54. szemetszedo.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/szemetszedo.jpg" alt="szemetszedo" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_43</h3>
+    </div>
+</div>
+
+<!-- 55. ta hwa.jpg -->
+<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
+    <img loading="lazy" src="fotok/ta hwa.jpg" alt="ta hwa" class="w-full h-80 object-cover">
+    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Europa</p>
+        <h3 class="text-2xl font-bold mb-2">Street photo_30</h3>
+    </div>
+</div>
+
+</div> <!-- EZ ZÁRJA A photo-grid TARTÓELEMET -->
+
+<!-- Új: Továbbiak betöltése gomb (A Keverés gomb dizájnjával) -->
+<div id="load-more-container" class="flex justify-center mt-10 mb-10 hidden">
+    <button onclick="loadMore()" class="flex items-center gap-2 bg-[#1A1A1A] border border-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-[#FF5722] transition-colors text-sm">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        More images
+    </button>
+</div>
+
+    </div> <!-- EZ ZÁRJA A max-w-7xl mx-auto px-6 TARTÓELEMET -->
+</main>
+
+<section id="kapcsolat" class="py-24 bg-[#121212] border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-[#1A1A1A] rounded-3xl p-10 md:p-20 border border-gray-800 flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="underline-playful">Ask me anything!</span>
+                </h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    For commissions or inquiries, feel free to reach out to me via phone or email. :) 
+                </p>
+                <br> </br>
+                <div class="space-y-6">
+                    <a href="tel:+36205771308" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-[#2A2A2A] text-white rounded-full flex items-center justify-center group-hover:bg-[#FF5722] transition-colors border border-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider">Phone</p>
+                            <p class="text-2xl font-bold text-white group-hover:text-[#FF5722] transition-colors">+36 20 577 1308</p>
+                        </div>
+                    </a>
+                    <a href="mailto:kolumban@szabox.hu" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-[#2A2A2A] text-white rounded-full flex items-center justify-center group-hover:bg-[#FF5722] transition-colors border border-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider">Email</p>
+                            <p class="text-2xl font-bold text-white group-hover:text-[#FF5722] transition-colors">kolumban@szabox.hu</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#121212] border-t border-gray-800 py-10 text-center text-sm text-gray-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Kolumbán Szabolcs - szabox.hu</p>
+        <a href="https://gmszabocs.github.io/" class="hover:text-[#FF5722] transition-colors">gmszabocs.github.io/</a>
+        <div class="flex space-x-6">
+            <a href="https://www.instagram.com/gm_szabocs/" class="hover:text-white transition-colors">Instagram</a>
+            <a href="https://www.behance.net/szabolcskolumban" class="hover:text-white transition-colors">Behance</a>
+            <a href="https://www.linkedin.com/in/szabolcskolumban/" class="hover:text-black transition-colors">LinkedIn</a>
+            <a href="https://www.facebook.com/szabolcs.kolumban" class="hover:text-white transition-colors">Facebook</a>
+        </div>
+    </div>
+</footer>
+
+<div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <button onclick="prevImage(event)" class="absolute left-4 md:left-10 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Nagyított kép" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+    <button onclick="nextImage(event)" class="absolute right-4 md:right-10 text-white hover:text-[#FF5722] z-50 transition-colors">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+</div>
+
+
+<script>
+    let portfolioCards = document.querySelectorAll('.portfolio-card');
+    let images = [];
+    let currentIndex = 0;
+    
+    // Alapértelmezett látható képek száma
+    let currentVisible = 12; 
+    
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const photoGrid = document.getElementById('photo-grid');
+    const loadMoreContainer = document.getElementById('load-more-container');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.remove('hidden');
+        setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.add('opacity-0');
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    function nextImage(e) {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex];
+    }
+
+    function prevImage(e) {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex];
+    }
+
+    // Dinamikus eseménykezelők a képek kattintásához
+    function initCardListeners() {
+        portfolioCards = document.querySelectorAll('.portfolio-card');
+        images = Array.from(portfolioCards).map(card => card.querySelector('img').src);
+        
+        portfolioCards.forEach((card, index) => {
+            let newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            newCard.addEventListener('click', () => openLightbox(index));
+        });
+    }
+
+    // ÚJ: Képek láthatóságának kezelése
+    function updateVisibility() {
+        let cards = Array.from(photoGrid.children);
+        cards.forEach((card, index) => {
+            if (index < currentVisible) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Gomb elrejtése vagy megjelenítése aszerint, maradt-e még kép
+        if (loadMoreContainer) {
+            if (currentVisible >= cards.length) {
+                loadMoreContainer.style.display = 'none';
+            } else {
+                loadMoreContainer.style.display = 'flex';
+                loadMoreContainer.classList.remove('hidden');
+            }
+        }
+    }
+
+    // ÚJ: Gomb kattintás esemény (újabb 12 kép megjelenítése)
+    function loadMore() {
+        currentVisible += 12;
+        updateVisibility();
+    }
+
+    // Keverés gomb funkciója (kiegészítve a láthatósággal)
+    function shuffleImages() {
+        let cards = Array.from(photoGrid.children);
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        
+        // Visszafűzzük őket a DOM-ba új sorrendben
+        cards.forEach(card => photoGrid.appendChild(card));
+        
+        // Frissítjük a nézetet, hogy a megkevert képekből is csak 12 látszódjon
+        updateVisibility();
+        initCardListeners();
+    }
+
+    // Kezdeti beállítások az oldal betöltésekor
+    updateVisibility();
+    initCardListeners();
+
+    // Lightbox bezárása háttérre kattintva
+    lightbox.addEventListener('click', (e) => {
+        if(e.target === lightbox) closeLightbox();
+    });
+
+    // Billentyűzet navigáció
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    });
+</script>
+
+
+</body>
+</html>
