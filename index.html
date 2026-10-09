@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOLUMBÁN Szabolcs</title>
     <meta name="description" content="Kolumbán Szabolcs, Artist, painter, POP art">
-    <meta name="keywords" content="brand identity, grafikus, KKV, Kolumbán Szabolcs, UI/UX, szabox, POP art, masterpiece, painting, frame, oilpainting, exhibition, kiállítás felsőzsolcán, művészeti kiállítás">
+    <meta name="keywords" content="brand identity, grafikus, KKV, Kolumbán Szabolcs, UI/UX, szabox">
     <meta name="author" content="KOLUMBÁN Szabolcs">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -53,34 +53,48 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logó / Név -->
         <a href="index.html" class="text-xl font-bold tracking-tight">KOLUMBÁN Szabolcs</a>
+
+        <!-- Mobil hamburger gomb -->
+        <button id="mobile-menu-button" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-700 text-white hover:text-[#FF5722] hover:border-[#FF5722] transition-colors" aria-label="Navigációs menü megnyitása" aria-controls="mobile-menu" aria-expanded="false">
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
         
-        <!-- Menü és Nyelvválasztó konténer -->
+        <!-- Asztali menü és nyelvválasztó -->
         <div class="hidden md:flex items-center">
-            
-            <!-- Fő navigáció -->
-            <nav class="flex space-x-8 text-sm font-medium items-center mr-8">
-                <!-- Az aktív fül hangsúlyos jelölése -->
-                <a href="index.html" class="text-[#FF5722] font-bold border-b-2 border-[#FF5722] pb-1">Alkotások</a>
+            <nav class="flex space-x-8 text-sm font-medium items-center mr-8" aria-label="Fő navigáció">
+                <a href="index.html" class="text-[#FF5722] font-bold border-b-2 border-[#FF5722] pb-1" aria-current="page">Alkotások</a>
                 <a href="fotok.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Fotók</a>
                 <a href="blog.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Blog</a>
                 <a href="contact.html" class="hover:text-[#FF5722] transition-colors text-gray-300">Rólam & Kapcsolat</a>
             </nav>
             
-            <!-- Nyelvválasztó (Elválasztó vonallal a menütől) -->
-            <div class="flex items-center space-x-3 text-sm font-semibold border-l border-gray-700 pl-8">
-                <!-- Aktív nyelv (HU) -->
-                <a href="index.html" class="text-white cursor-default">HU</a>
-                
+            <div class="flex items-center space-x-3 text-sm font-semibold border-l border-gray-700 pl-8" aria-label="Nyelvválasztó">
+                <a href="index.html" class="text-white cursor-default" aria-current="page">HU</a>
                 <span class="text-gray-700 text-xs">|</span>
-                
-                <!-- Inaktív nyelvek (EN, IT) -->
                 <a href="festmenyek_eng.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">EN</a>
-                
                 <span class="text-gray-700 text-xs">|</span>
-                
                 <a href="festmenyek_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">IT</a>
             </div>
-            
+        </div>
+    </div>
+
+    <!-- Mobil lenyíló menü -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-[#121212]" aria-label="Mobil navigáció">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-1 text-base font-medium">
+            <a href="index.html" class="rounded-lg px-4 py-3 bg-[#1A1A1A] text-[#FF5722] font-bold" aria-current="page">Alkotások</a>
+            <a href="fotok.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Fotók</a>
+            <a href="blog.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Blog</a>
+            <a href="contact.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Rólam & Kapcsolat</a>
+        </nav>
+        <div class="max-w-7xl mx-auto px-10 pb-6 pt-4 flex items-center gap-5 text-sm font-semibold border-t border-gray-800" aria-label="Nyelvválasztó">
+            <a href="index.html" class="text-white" aria-current="page">HU</a>
+            <a href="festmenyek_eng.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">EN</a>
+            <a href="festmenyek_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">IT</a>
         </div>
     </div>
 </header>
@@ -282,7 +296,7 @@
 
 <!-- 1. IMG_6841.JPG -->
 <div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/IMG_6841.jpg" alt="IMG_6841" class="w-full h-80 object-cover">
+    <img src="festmenyek/IMG_6841.JPG" alt="IMG_6841" class="w-full h-80 object-cover">
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Festmény</p>
         <h3 class="text-2xl font-bold mb-2">KFC 1</h3>
@@ -291,7 +305,7 @@
 
 <!-- 2. IMG_6845.JPG -->
 <div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/IMG_6845.jpg" alt="IMG_6845" class="w-full h-80 object-cover">
+    <img src="festmenyek/IMG_6845.JPG" alt="IMG_6845" class="w-full h-80 object-cover">
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Festmény</p>
         <h3 class="text-2xl font-bold mb-2">Burkerking 1</h3>
@@ -358,14 +372,6 @@
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Festmény</p>
         <h3 class="text-2xl font-bold mb-2">foetel_3Emerald</h3>
-    </div>
-</div>
-
-<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/tetkos_banan.JPG alt="foetel_3Emerald" class="w-full h-80 object-cover">
-    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
-        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Festmény</p>
-        <h3 class="text-2xl font-bold mb-2">Tetkós banán</h3>
     </div>
 </div>
     
@@ -450,6 +456,38 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const photoGrid = document.getElementById('photo-grid');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+
+    function setMobileMenu(open) {
+        mobileMenu.classList.toggle('hidden', !open);
+        menuOpenIcon.classList.toggle('hidden', open);
+        menuCloseIcon.classList.toggle('hidden', !open);
+        mobileMenuButton.setAttribute('aria-expanded', String(open));
+        mobileMenuButton.setAttribute('aria-label', open ? 'Navigációs menü bezárása' : 'Navigációs menü megnyitása');
+    }
+
+    mobileMenuButton.addEventListener('click', () => {
+        const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        setMobileMenu(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMobileMenu(false));
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) setMobileMenu(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+            setMobileMenu(false);
+            mobileMenuButton.focus();
+        }
+    });
 
     function openLightbox(index) {
         currentIndex = index;

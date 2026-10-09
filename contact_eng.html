@@ -50,6 +50,16 @@
         <a href="index.html" class="text-xl font-bold tracking-tight">KOLUMBÁN Szabolcs</a>
         
         <!-- Menu and Language Selector Container -->
+        
+        <!-- Mobil hamburger gomb -->
+        <button id="mobile-menu-button" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-700 text-white hover:text-[#FF5722] hover:border-[#FF5722] transition-colors" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
         <div class="hidden md:flex items-center">
             
             <!-- Main Navigation -->
@@ -77,6 +87,21 @@
                 <a href="contact_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">IT</a>
             </div>
             
+        </div>
+    </div>
+
+    <!-- Mobil lenyíló menü -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-[#121212]" aria-label="Mobile navigation">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-1 text-base font-medium">
+            <a href="festmenyek_eng.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Artworks</a>
+            <a href="fotok_eng.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Photography</a>
+            <a href="blog_eng.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Blog</a>
+            <a href="contact_eng.html" class="rounded-lg px-4 py-3 bg-[#1A1A1A] text-[#FF5722] font-bold" aria-current="page">About & Contact</a>
+        </nav>
+        <div class="max-w-7xl mx-auto px-10 pb-6 pt-4 flex items-center gap-5 text-sm font-semibold border-t border-gray-800" aria-label="Language selector">
+            <a href="contact.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">HU</a>
+            <a href="#" class="text-white" aria-current="page">EN</a>
+            <a href="contact_it.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">IT</a>
         </div>
     </div>
 </header>
@@ -295,6 +320,42 @@
     });
 </script>
 
+<script>
+    // Mobil navigáció vezérlése
+    (() => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        function setMobileMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuOpenIcon.classList.toggle('hidden', open);
+            menuCloseIcon.classList.toggle('hidden', !open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenuButton.setAttribute('aria-label', open ? "Close navigation menu" : "Open navigation menu");
+        }
+
+        mobileMenuButton.addEventListener('click', () => {
+            setMobileMenu(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMobileMenu(false));
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) setMobileMenu(false);
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+                setMobileMenu(false);
+                mobileMenuButton.focus();
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>

@@ -51,6 +51,16 @@
         <a href="festmenyek_it.html" class="text-xl font-bold tracking-tight">KOLUMBÁN Szabolcs</a>
         
         <!-- Menü és Nyelvválasztó konténer -->
+        
+        <!-- Mobil hamburger gomb -->
+        <button id="mobile-menu-button" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-700 text-white hover:text-[#FF5722] hover:border-[#FF5722] transition-colors" aria-label="Apri il menu di navigazione" aria-controls="mobile-menu" aria-expanded="false">
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
         <div class="hidden md:flex items-center">
             
             <!-- Fő navigáció -->
@@ -77,6 +87,21 @@
                 <a href="festmenyek_it.html" class="text-white cursor-default">IT</a>
             </div>
             
+        </div>
+    </div>
+
+    <!-- Mobil lenyíló menü -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-[#121212]" aria-label="Navigazione mobile">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-1 text-base font-medium">
+            <a href="festmenyek_it.html" class="rounded-lg px-4 py-3 bg-[#1A1A1A] text-[#FF5722] font-bold" aria-current="page">Opere d'arte</a>
+            <a href="fotok_it.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Fotografia</a>
+            <a href="blog_it.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Blog</a>
+            <a href="contact_it.html" class="rounded-lg px-4 py-3 text-gray-300 hover:bg-[#1A1A1A] hover:text-[#FF5722] transition-colors">Chi sono & Contatti</a>
+        </nav>
+        <div class="max-w-7xl mx-auto px-10 pb-6 pt-4 flex items-center gap-5 text-sm font-semibold border-t border-gray-800" aria-label="Selettore della lingua">
+            <a href="index.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">HU</a>
+            <a href="festmenyek_eng.html" class="text-gray-500 hover:text-[#FF5722] transition-colors">EN</a>
+            <a href="festmenyek_it.html" class="text-white" aria-current="page">IT</a>
         </div>
     </div>
 </header>
@@ -278,7 +303,7 @@
 
 <!-- 1. IMG_6841.JPG -->
 <div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/IMG_6841.jpg" alt="IMG_6841" class="w-full h-80 object-cover">
+    <img src="festmenyek/IMG_6841.JPG" alt="IMG_6841" class="w-full h-80 object-cover">
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Dipinti</p>
         <h3 class="text-2xl font-bold mb-2">KFC 1</h3>
@@ -287,7 +312,7 @@
 
 <!-- 2. IMG_6845.JPG -->
 <div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/IMG_6845.jpg" alt="IMG_6845" class="w-full h-80 object-cover">
+    <img src="festmenyek/IMG_6845.JPG" alt="IMG_6845" class="w-full h-80 object-cover">
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Dipinti</p>
         <h3 class="text-2xl font-bold mb-2">Burkerking 1</h3>
@@ -354,14 +379,6 @@
     <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
         <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Dipinti</p>
         <h3 class="text-2xl font-bold mb-2">piatto principale_1</h3>
-    </div>
-</div>
-
-<div class="portfolio-card block bg-[#1A1A1A] rounded-md shadow-md cursor-pointer relative">
-    <img src="festmenyek/tetkos_banan.JPG" alt="foetel_3Emerald" class="w-full h-80 object-cover">
-    <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
-        <p class="text-sm uppercase tracking-wider text-[#FF5722] font-semibold mb-1">Dipinti</p>
-        <h3 class="text-2xl font-bold mb-2">Tattuato banana</h3>
     </div>
 </div>
     
@@ -521,6 +538,42 @@
     });
 </script>
 
+<script>
+    // Mobil navigáció vezérlése
+    (() => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        function setMobileMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuOpenIcon.classList.toggle('hidden', open);
+            menuCloseIcon.classList.toggle('hidden', !open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenuButton.setAttribute('aria-label', open ? "Chiudi il menu di navigazione" : "Apri il menu di navigazione");
+        }
+
+        mobileMenuButton.addEventListener('click', () => {
+            setMobileMenu(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMobileMenu(false));
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) setMobileMenu(false);
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+                setMobileMenu(false);
+                mobileMenuButton.focus();
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
